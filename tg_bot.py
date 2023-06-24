@@ -9,8 +9,6 @@ from typing import List, Tuple
 
 from db_stuff import Subscription, Base
 
-
-# TODO: How do I add those to the container?
 APP_TOKEN = os.environ.get("APP_TOKEN")
 
 
