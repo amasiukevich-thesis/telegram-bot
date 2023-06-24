@@ -1,0 +1,21 @@
+version: '1.0'
+services:
+  tg_bot:
+    container_name: sub-telegram-bot
+    networks:
+      - dataconnector_backend
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - APP_TOKEN=${APP_TOKEN}
+      - CONNECTION_STRING=${CONNECTION_STRING}
+
+#      - POSTGRES_USER: ${POSTGRES_USER}
+#      - POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+#      - POSTGRES_DB: ${POSTGRES_DB}
+#      - DB_HOST: ${DB_HOST}
+
+networks:
+  dataconnector_backend:
+    external: true
